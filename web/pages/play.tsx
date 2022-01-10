@@ -29,7 +29,8 @@ function Play() {
   // 528px/33rem tall
   return (
     <Layout title="Play | RPS">
-      <div className="grid-botbar h-full max-h-[36rem]">
+      <div className="flex flex-col grid -botbar h-full max-h-[36rem]">
+        <div className="grow-1"></div>
         <h1 className="place-self-center text-4xl text-center font-bold mb- 16">
           {revealHand ? (
             <span className="animate-fade-in">SHOOT!</span>
@@ -42,25 +43,23 @@ function Play() {
             </span>
           )}
         </h1>
-        <div>
-          <section className="grid-midbar w-full">
-            <Player
-              isOpponent={false}
-              revealHand={revealHand}
-              isWinner={false}
-            />
-            <p className="condensed-font my-auto pt-12">VS</p>
-            <Player isOpponent={true} revealHand={revealHand} isWinner={true} />
-          </section>
-          <section className="flex flex-col items-center mt-16">
-            <h6 className="mb-2">Your moves</h6>
-            <div className="grid grid-flow-col gap-4 place-items-center">
-              <MoveButton icon={Rock} label="ROCK" />
-              <MoveButton icon={Paper} label="PAPER" />
-              <MoveButton icon={Scissors} label="SCISSORS" />
-            </div>
-          </section>
-        </div>
+        {/* <div> */}
+        <div className="grow-1"></div>
+        <section className="grid-midbar w-full">
+          <Player isOpponent={false} revealHand={revealHand} isWinner={false} />
+          <p className="condensed-font my-auto pt-12">VS</p>
+          <Player isOpponent={true} revealHand={revealHand} isWinner={true} />
+        </section>
+        <div className="grow-1"></div>
+        <section className="flex flex-col items-center mt- 16">
+          <h6 className="mb-2">Your moves</h6>
+          <div className="grid grid-flow-col gap-4 place-items-center">
+            <MoveButton icon={Rock} label="ROCK" />
+            <MoveButton icon={Paper} label="PAPER" />
+            <MoveButton icon={Scissors} label="SCISSORS" />
+          </div>
+        </section>
+        {/* </div> */}
       </div>
     </Layout>
   );
