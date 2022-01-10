@@ -29,8 +29,8 @@ function Play() {
   // 528px/33rem tall
   return (
     <Layout title="Play | RPS">
-      <div className="grid grid-rows-3 place-items-center h-full">
-        <h1 className="text-4xl text-center font-bold mb- 16">
+      <div className="grid-botbar h-full max-h-[36rem]">
+        <h1 className="place-self-center text-4xl text-center font-bold mb- 16">
           {revealHand ? (
             <span className="animate-fade-in">SHOOT!</span>
           ) : (
@@ -42,19 +42,25 @@ function Play() {
             </span>
           )}
         </h1>
-        <section className="grid-midbar w-full">
-          <Player isOpponent={false} revealHand={revealHand} isWinner={false} />
-          <p className="condensed-font my-auto pt-12">VS</p>
-          <Player isOpponent={true} revealHand={revealHand} isWinner={true} />
-        </section>
-        <section className="flex flex-col items-center mt- 16">
-          <h6 className="mb-2">Your moves</h6>
-          <div className="grid grid-flow-col gap-4 place-items-center">
-            <MoveButton icon={Rock} label="ROCK" />
-            <MoveButton icon={Paper} label="PAPER" />
-            <MoveButton icon={Scissors} label="SCISSORS" />
-          </div>
-        </section>
+        <div>
+          <section className="grid-midbar w-full">
+            <Player
+              isOpponent={false}
+              revealHand={revealHand}
+              isWinner={false}
+            />
+            <p className="condensed-font my-auto pt-12">VS</p>
+            <Player isOpponent={true} revealHand={revealHand} isWinner={true} />
+          </section>
+          <section className="flex flex-col items-center mt-16">
+            <h6 className="mb-2">Your moves</h6>
+            <div className="grid grid-flow-col gap-4 place-items-center">
+              <MoveButton icon={Rock} label="ROCK" />
+              <MoveButton icon={Paper} label="PAPER" />
+              <MoveButton icon={Scissors} label="SCISSORS" />
+            </div>
+          </section>
+        </div>
       </div>
     </Layout>
   );
@@ -96,7 +102,7 @@ function Player({ isOpponent, revealHand, isWinner }: Props) {
           <div className="flip-card-front">
             <div
               className={clsx(
-                "grid place-items-center w-36 h-36 bg-yellow-100 rounded-full mb-3",
+                "grid place-items-center w-full h-full bg-yellow-100 rounded-full mb-3",
                 isOpponent && "-scale-x-100"
               )}
             >
@@ -106,7 +112,7 @@ function Player({ isOpponent, revealHand, isWinner }: Props) {
           <div className="flip-card-back">
             <div
               className={clsx(
-                "grid place-items-center w-36 h-36 bg-yellow-100 rounded-full mb-3",
+                "grid place-items-center w-full h-full bg-yellow-100 rounded-full mb-3",
                 isOpponent && "-scale-x-100"
               )}
             >

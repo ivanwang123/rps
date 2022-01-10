@@ -47,6 +47,11 @@ a {
   grid-template-rows: auto 1fr;
 }
 
+.grid-botbar {
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
 /* FLIP CARD */
 
 .flip-card {
