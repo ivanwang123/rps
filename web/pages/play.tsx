@@ -26,33 +26,36 @@ function Play() {
     return () => clearInterval(interval);
   }, [countdown, setCountdown]);
 
+  // 528px/33rem tall
   return (
     <Layout title="Play | RPS">
-      <h1 className="text-4xl text-center font-bold mb-16">
-        {revealHand ? (
-          <span className="animate-fade-in">SHOOT!</span>
-        ) : (
-          <span
-            className="animate-[ping_1s_ease-in-out_forwards]"
-            key={countdown}
-          >
-            {countdownMsg[countdown]}
-          </span>
-        )}
-      </h1>
-      <section className="grid-midbar w-full">
-        <Player isOpponent={false} revealHand={revealHand} isWinner={false} />
-        <p className="condensed-font my-auto pt-12">VS</p>
-        <Player isOpponent={true} revealHand={revealHand} isWinner={false} />
-      </section>
-      <section className="flex flex-col items-center mt-16">
-        <h6 className="mb-2">Your moves</h6>
-        <div className="grid grid-flow-col gap-4 place-items-center">
-          <MoveButton icon={Rock} label="ROCK" />
-          <MoveButton icon={Paper} label="PAPER" />
-          <MoveButton icon={Scissors} label="SCISSORS" />
-        </div>
-      </section>
+      <div className="grid grid-rows-3 place-items-center h-full">
+        <h1 className="text-4xl text-center font-bold mb- 16">
+          {revealHand ? (
+            <span className="animate-fade-in">SHOOT!</span>
+          ) : (
+            <span
+              className="animate-[ping_1s_ease-in-out_forwards]"
+              key={countdown}
+            >
+              {countdownMsg[countdown]}
+            </span>
+          )}
+        </h1>
+        <section className="grid-midbar w-full">
+          <Player isOpponent={false} revealHand={revealHand} isWinner={false} />
+          <p className="condensed-font my-auto pt-12">VS</p>
+          <Player isOpponent={true} revealHand={revealHand} isWinner={true} />
+        </section>
+        <section className="flex flex-col items-center mt- 16">
+          <h6 className="mb-2">Your moves</h6>
+          <div className="grid grid-flow-col gap-4 place-items-center">
+            <MoveButton icon={Rock} label="ROCK" />
+            <MoveButton icon={Paper} label="PAPER" />
+            <MoveButton icon={Scissors} label="SCISSORS" />
+          </div>
+        </section>
+      </div>
     </Layout>
   );
 }
