@@ -43,7 +43,7 @@ function Play() {
       <section className="grid-midbar w-full">
         <Player isOpponent={false} revealHand={revealHand} isWinner={false} />
         <p className="condensed-font my-auto pt-12">VS</p>
-        <Player isOpponent={true} revealHand={revealHand} isWinner={true} />
+        <Player isOpponent={true} revealHand={revealHand} isWinner={false} />
       </section>
       <section className="flex flex-col items-center mt-16">
         <h6 className="mb-2">Your moves</h6>
