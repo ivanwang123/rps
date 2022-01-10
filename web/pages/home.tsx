@@ -43,63 +43,79 @@ function Home() {
         <Circle />
         <Circle />
       </section>
-      <section
-        className={clsx(
-          "fixed top-0 bottom-0 left-0 flex flex-col items-center w-full max-w-sm bg-background border-r-2 border-black p-5 pt-3 overflow-auto overscroll-contain transition-all ease-out",
-          showProfile
-            ? "translate-x-0 opacity-100 pointer-events-auto"
-            : "-translate-x-full opacity-0 pointer-events-none"
-        )}
+      <Profile
+        showProfile={showProfile}
+        color={color}
+        setShowProfile={setShowProfile}
+        setColor={setColor}
+      />
+    </Layout>
+  );
+}
+
+type Props = {
+  showProfile: boolean;
+  color: typeof colors[number];
+  setShowProfile: any;
+  setColor: any;
+};
+
+function Profile({ showProfile, color, setShowProfile, setColor }: Props) {
+  return (
+    <section
+      className={clsx(
+        "fixed top-0 bottom-0 left-0 flex flex-col items-center w-full max-w-sm bg-background border-r-2 border-black p-5 pt-3 overflow-auto overscroll-contain transition-all ease-out",
+        showProfile
+          ? "translate-x-0 opacity-100 pointer-events-auto"
+          : "-translate-x-full opacity-0 pointer-events-none"
+      )}
+    >
+      <button
+        type="button"
+        className="ml-auto"
+        onClick={() => setShowProfile(false)}
       >
+        <Close className="w-6 h-6" />
+      </button>
+      <div className="grid-midbar">
+        <div
+          className={clsx(
+            "col-start-2 grid place-items-center w-36 h-36 rounded-full mb-3",
+            color
+          )}
+        >
+          <Creature className="w-24 h-24" />
+        </div>
+        <div className="grid grid-flow-row gap-2 self-center h-max ml-4">
+          {colors.map((c) => (
+            <div
+              className={clsx(
+                "w-5 h-5 rounded-full",
+                c,
+                color === c && "border-2 border-black"
+              )}
+              onClick={() => setColor(c)}
+              key={c}
+            ></div>
+          ))}
+        </div>
+      </div>
+      <h3 className="text-xl font-bold mb-2">Your_Name</h3>
+      <p className="text-center">A short message to leave for your opponent.</p>
+      <div className="w-full">
+        <h3 className="flex items-center mt-5">LINKS</h3>
+        <EditLink />
+        <EditLink />
+        <EditLink />
+        <EditLink />
         <button
           type="button"
-          className="ml-auto"
-          onClick={() => setShowProfile(false)}
+          className="flex justify-center items-center w-full border-2 border-black py-1 rounded-full"
         >
-          <Close className="w-6 h-6" />
+          <Add className="w-6 h-6 fill-current" /> Add link
         </button>
-        <div className="grid-midbar">
-          <div
-            className={clsx(
-              "col-start-2 grid place-items-center w-36 h-36 rounded-full mb-3",
-              color
-            )}
-          >
-            <Creature className="w-24 h-24" />
-          </div>
-          <div className="grid grid-flow-row gap-2 self-center h-max ml-4">
-            {colors.map((c) => (
-              <div
-                className={clsx(
-                  "w-4 h-4 rounded-full",
-                  c,
-                  color === c && "border-2 border-black"
-                )}
-                onClick={() => setColor(c)}
-                key={c}
-              ></div>
-            ))}
-          </div>
-        </div>
-        <h3 className="text-xl font-bold mb-2">Your_Name</h3>
-        <p className="text-center">
-          A short message to leave for your opponent.
-        </p>
-        <div className="w-full">
-          <h3 className="flex items-center mt-5">LINKS</h3>
-          <EditLink />
-          <EditLink />
-          <EditLink />
-          <EditLink />
-          <button
-            type="button"
-            className="flex justify-center items-center w-full border-2 border-black py-1 rounded-full"
-          >
-            <Add className="w-6 h-6 fill-current" /> Add link
-          </button>
-        </div>
-      </section>
-    </Layout>
+      </div>
+    </section>
   );
 }
 
