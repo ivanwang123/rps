@@ -40,7 +40,7 @@ export function Layout({ children, title = "Chitter" }: Props) {
               Profile
             </span>
           </button> */}
-          <main className="col-start-2 w-full max-w-xl min-w-sm py-12 mx-2">
+          <main className="col-start-2 w-full max-w-xl py-12 mx-2">
             {children}
           </main>
         </div>
