@@ -45,7 +45,7 @@ function Home() {
       </section>
       <section
         className={clsx(
-          "fixed top-0 bottom-0 left-0 flex flex-col items-center w-full max-w-sm bg-background border-r-2 border-black p-5 pt-3 overflow-auto overscroll-none transition-all ease-out",
+          "fixed top-0 bottom-0 left-0 flex flex-col items-center w-full max-w-sm bg-background border-r-2 border-black p-5 pt-3 overflow-auto overscroll-contain transition-all ease-out",
           showProfile
             ? "translate-x-0 opacity-100 pointer-events-auto"
             : "-translate-x-full opacity-0 pointer-events-none"

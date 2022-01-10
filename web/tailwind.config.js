@@ -9,7 +9,7 @@ module.exports = {
         background: "#fff", //"#FED70D",
       },
       minWidth: {
-        sm: "24rem",
+        xs: "20rem",
       },
       keyframes: {
         wiggle: {
