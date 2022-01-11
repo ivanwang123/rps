@@ -30,7 +30,7 @@ export function Layout({ children, title = "Chitter" }: Props) {
           </button>
         </nav>
         <div className="flex justify-center">
-          <main className="w-full max-w-xl min-w-xs pb-8 mx-2">{children}</main>
+          <main className="w-full max-w-xl min-w-xs pb-8 mx-6">{children}</main>
         </div>
       </div>
     </>
