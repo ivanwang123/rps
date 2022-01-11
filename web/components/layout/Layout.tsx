@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import React, { ReactNode } from "react";
 import Home from "svgs/home.svg";
+import Logo from "svgs/logo.svg";
 
 type Props = {
   children?: ReactNode;
@@ -20,7 +21,7 @@ export function Layout({ children, title = "Chitter" }: Props) {
         <nav className="flex items-center w-full px-6 py-3">
           <Link href="/home">
             <a className="flex items-center">
-              <Home className="w-4 h-4 mr-2" /> RPS
+              <Logo className="w-4 h-4 mr-2" /> RPS
             </a>
           </Link>
           <button type="button" className="ml-auto group">
