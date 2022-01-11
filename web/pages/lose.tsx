@@ -6,7 +6,7 @@ import { DisplayLink } from "components/Link";
 function Lose() {
   return (
     <Layout title="Play | RPS">
-      <h1 className="text-4xl text-center font-bold my-16">
+      <h1 className="text-4xl text-center font-bold my-8">
         OPPONENT_NAME WINS
       </h1>
       <section>
