@@ -26,12 +26,9 @@ function Play() {
     return () => clearInterval(interval);
   }, [countdown, setCountdown]);
 
-  // 528px/33rem tall
   return (
     <Layout title="Play | RPS">
-      <div className="flex flex-col justify-between h-full max-h-[36rem]">
-        {/* PLACEHOLDER */}
-        <div></div>
+      <div className="flex flex-col justify-evenly h-full max-h-[40rem]">
         <h1 className="text-4xl text-center font-bold">
           {revealHand ? (
             <span className="animate-fade-in">SHOOT!</span>
