@@ -6,7 +6,7 @@ import { DisplayLink } from "components/Link";
 function Lose() {
   return (
     <Layout title="Play | RPS">
-      <h1 className="text-4xl text-center font-bold mb-16">
+      <h1 className="text-4xl text-center font-bold my-16">
         OPPONENT_NAME WINS
       </h1>
       <section>
@@ -18,12 +18,13 @@ function Lose() {
           </div>
         </div>
       </section>
-      <section className="flex justify-center mt-4">
+      <section className="flex justify-center mt-6">
         <div className="w-full max-w-sm">
-          <p className="text-center mb-4">
-            Check me out. This is something to read while you look around.
+          <p className="text-center mb-3">
+            Check me out. This is something to read while you look around. Now
+            you can go.
           </p>
-          <div className="flex flex-col items-center mb-4">
+          <div className="flex flex-col items-center mb-8">
             <DisplayLink />
             <DisplayLink />
             <DisplayLink />
