@@ -20,7 +20,7 @@ export function Layout({ children, title = "Chitter" }: Props) {
         <nav className="flex items-center w-full px-6 py-3">
           <Link href="/home">
             <a className="flex items-center">
-              <Home className="w-6 h-6 mr-2" /> RPS
+              <Home className="w-4 h-4 mr-2" /> RPS
             </a>
           </Link>
           <button type="button" className="ml-auto group">

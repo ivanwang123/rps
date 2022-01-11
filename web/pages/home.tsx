@@ -88,7 +88,8 @@ function Profile({ showProfile, color, setShowProfile, setColor }: Props) {
         </div>
         <div className="grid grid-flow-row gap-2 self-center h-max ml-4">
           {colors.map((c) => (
-            <div
+            <button
+              type="button"
               className={clsx(
                 "w-5 h-5 rounded-full",
                 c,
@@ -96,7 +97,7 @@ function Profile({ showProfile, color, setShowProfile, setColor }: Props) {
               )}
               onClick={() => setColor(c)}
               key={c}
-            ></div>
+            ></button>
           ))}
         </div>
       </div>
